@@ -28,7 +28,7 @@ const newsreader = Newsreader({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: "Sajjad Chaus — AI/ML & Backend Infrastructure Engineer",
+  title: "Sajjad Chaus",
   description:
     "I build AI agents and the distributed systems they run on. AI/ML engineer focused on agentic systems, RAG pipelines, and scalable backend infrastructure.",
   keywords: [
