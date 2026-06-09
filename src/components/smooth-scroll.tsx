@@ -5,8 +5,9 @@ import { useEffect, useState, type ReactNode } from "react";
 
 /**
  * App-wide momentum smooth scrolling (Lenis), mounted at the root.
- * `anchors: true` makes in-page links (e.g. href="#projects") glide to target.
- * Collapses to native scroll when the user prefers reduced motion.
+ * In-page links scroll via `useScrollTo` (no `#hash` pushed to the URL), so
+ * Lenis's own anchor handling stays off. Collapses to native scroll under
+ * reduced motion.
  */
 export function SmoothScroll({ children }: { children: ReactNode }) {
   const [reduced, setReduced] = useState(false);
@@ -25,7 +26,6 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
       options={{
         duration: reduced ? 0 : 1.1,
         smoothWheel: !reduced,
-        anchors: { offset: -8 },
       }}
     >
       {children}

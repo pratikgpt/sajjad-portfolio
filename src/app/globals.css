@@ -203,6 +203,17 @@
   }
 }
 
+/* GitHub contribution calendar ships at `width: max-content` (shrinks to the
+   grid), leaving a gap inside the card. Force the root to fill, then scale the
+   SVG to match — it has a viewBox, so the whole grid grows to the card width. */
+.contrib-card .react-activity-calendar {
+  width: 100% !important;
+}
+.contrib-card .react-activity-calendar__calendar {
+  width: 100%;
+  height: auto;
+}
+
 /* Respect reduced motion globally (Framer Motion also honors this in JS) */
 @media (prefers-reduced-motion: reduce) {
   html {

@@ -6,7 +6,7 @@
 export const profile = {
   name: "Sajjad Chaus",
   tagline: "AI/ML Engineer, 22",
-  meta: "22 · Mumbai, India · Open to full-time & internships from May 2026",
+  meta: "22 · Mumbai, India · Open to full-time & internships",
   photo: "/sajjad.jpg",
   resume: "/Sajjad_resume.pdf",
 };
@@ -18,13 +18,21 @@ export const links = {
   email: "chaussajjad@gmail.com",
 };
 
-export const stats = [
-  { value: "Top 363 / 82,000+", label: "Amazon ML Hackathon" },
-  { value: "4th place", label: "Fidlatica ML Competition" },
-  { value: "AI/ML Intern", label: "EngageOS.ai" },
-];
-
 export const experience = [
+  {
+    role: "ML Engineer — Internship",
+    company: "Matrice AI",
+    location: "Remote, India",
+    period: "Dec 2025 – Feb 2026",
+    summary:
+      "Built real-time computer-vision pipelines for customer analytics on live video streams.",
+    bullets: [
+      "Engineered core CV pipelines for customer analytics, cutting latency ~15% on real-time streams.",
+      "Fine-tuned custom YOLO models (JointBDOE) and accelerated inference with TensorRT for real-time streaming.",
+      "Prototyped a Smart People Counter with YOLOv11s, reaching 0.92 mAP on high-density mall datasets.",
+    ],
+    stack: ["YOLOv11", "TensorRT", "PyTorch", "Computer Vision", "Python"],
+  },
   {
     role: "AI/ML Engineer — Internship",
     company: "EngageOS.ai",
@@ -59,7 +67,6 @@ export const projects: Project[] = [
     description:
       "Real-time doctor–patient translation with a full voice pipeline — speak in one language, the other side hears it — plus AI medical summarization across 20 languages.",
     image: "/projects/meditranslate.png",
-    live: "https://health-care-assistant-system.vercel.app",
     repo: "https://github.com/Sajjad01-chaus/HealthCare_Assistant_System",
   },
   {
@@ -76,7 +83,6 @@ export const projects: Project[] = [
     description:
       "Turns an ad creative into a personalized landing page — vision analysis maps the ad, then an LLM rewrites the page copy for conversion, streamed live.",
     image: "/projects/troopod.png",
-    live: "https://magic-page-ub7i.onrender.com",
     repo: "https://github.com/Sajjad01-chaus/Magic_Page",
   },
   {
@@ -85,7 +91,6 @@ export const projects: Project[] = [
     description:
       "A multi-agent pipeline that ingests medical-claim PDFs, classifies each page with a multimodal LLM, and extracts structured data into clean JSON.",
     image: "/projects/claim-pipeline.png",
-    live: "https://claim-processing-pipeline-wqvz.onrender.com/docs",
     repo: "https://github.com/Sajjad01-chaus/Claim-Processing-Pipeline",
   },
 ];
@@ -142,22 +147,4 @@ export const techStack: { group: string; items: StackItem[] }[] = [
       { name: "Git / GitHub", slug: "github" },
     ],
   },
-];
-
-export const about = {
-  body: "I'm a final-year B.Tech CS (IoT) student with a Minor in AI at Thakur College of Engineering & Technology, Mumbai (CGPA 8.0, graduating May 2026). Most of my time goes into scalable AI systems and distributed architectures — right now I'm going deeper on ML system design and MLOps.",
-  human: "I learn by building, breaking, and rebuilding. If something I made is on fire, I'm probably enjoying it.",
-  education: {
-    school: "Thakur College of Engineering & Technology",
-    degree: "B.Tech CS (IoT), Minor in AI",
-    detail: "CGPA 8.0 · Graduating May 2026",
-  },
-};
-
-export const nav = [
-  { id: "work", label: "Work" },
-  { id: "projects", label: "Projects" },
-  { id: "stack", label: "Stack" },
-  { id: "about", label: "About" },
-  { id: "contact", label: "Contact" },
 ];

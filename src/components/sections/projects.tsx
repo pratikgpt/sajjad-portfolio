@@ -63,7 +63,7 @@ function ProjectCard({ project }: { project: Project }) {
 
 export function Projects() {
   return (
-    <Section id="projects" tag="Projects" heading="Featured Projects" wide>
+    <Section id="projects" tag="Projects" heading="Featured Projects">
       <div className="grid gap-x-10 gap-y-14 md:grid-cols-2">
         {projects.map((p, i) => (
           <Reveal key={p.title} delay={(i % 2) * 0.08} className="h-full">

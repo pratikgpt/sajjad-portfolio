@@ -21,7 +21,6 @@ export function Section({
   heading,
   intro,
   children,
-  wide = false,
   className,
 }: {
   id: string;
@@ -29,17 +28,11 @@ export function Section({
   heading: ReactNode;
   intro?: ReactNode;
   children: ReactNode;
-  wide?: boolean;
   className?: string;
 }) {
   return (
-    <section id={id} className={cn("scroll-mt-24 py-20 md:py-28", className)}>
-      <div
-        className={cn(
-          "mx-auto w-full px-6 md:px-12 lg:px-18",
-          wide ? "max-w-6xl" : "max-w-5xl"
-        )}
-      >
+    <section id={id} className={cn("scroll-mt-24 py-16 md:py-20", className)}>
+      <div className="mx-auto w-full max-w-6xl px-6 md:px-12 lg:px-18">
         <Reveal className="mb-12 md:mb-14">
           {tag ? <SectionTag>{tag}</SectionTag> : null}
           <h2 className="mt-2.5 font-serif text-3xl font-normal tracking-tight text-foreground md:text-[2.6rem] md:leading-[1.1]">

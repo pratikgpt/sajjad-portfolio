@@ -97,8 +97,7 @@ Icon grid, grouped:
 ### 2.7 Contact  (tag: `CONTACT`)
 - Heading: *"Let's build something."*
 - Email: chaussajjad@gmail.com · LinkedIn: https://www.linkedin.com/in/sajjad-chaus-541b89258 · GitHub: https://github.com/Sajjad01-chaus
-- A simple contact form (name, email, message). Wire to **Formspree** or a Next.js route handler — leave the endpoint as a clearly-marked TODO env var.
-- Add a **Cal.com** "Schedule a 30-min call" link as a placeholder (`NEXT_PUBLIC_CAL_LINK`).
+- A direct **"Email me"** mailto: button (no form backend) alongside the email/LinkedIn/GitHub channels.
 - Footer: `© 2026 Sajjad Chaus` + repeated social icons.
 
 ---

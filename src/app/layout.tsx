@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Newsreader } from "next/font/google";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import { siteConfig } from "@/lib/config";
+import { links } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +26,8 @@ const newsreader = Newsreader({
   style: ["normal", "italic"],
 });
 
-const siteUrl = "https://sajjadchaus.com";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteConfig.url),
   title: "Sajjad Chaus — AI/ML & Backend Infrastructure Engineer",
   description:
     "I build AI agents and the distributed systems they run on. AI/ML engineer focused on agentic systems, RAG pipelines, and scalable backend infrastructure.",
@@ -44,17 +44,26 @@ export const metadata: Metadata = {
   authors: [{ name: "Sajjad Chaus" }],
   openGraph: {
     type: "website",
-    url: siteUrl,
+    url: siteConfig.url,
     title: "Sajjad Chaus — AI/ML & Backend Infrastructure Engineer",
     description:
       "I build AI agents and the distributed systems they run on.",
-    siteName: "Sajjad Chaus",
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Sajjad Chaus — AI/ML & Backend Infrastructure Engineer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Sajjad Chaus — AI/ML & Backend Infrastructure Engineer",
     description:
       "I build AI agents and the distributed systems they run on.",
+    images: ["/og.png"],
   },
 };
 
@@ -69,6 +78,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    jobTitle: "AI/ML & Backend Infrastructure Engineer",
+    email: `mailto:${links.email}`,
+    sameAs: [links.github, links.linkedin],
+  };
+
   return (
     <html
       lang="en"
@@ -76,6 +95,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

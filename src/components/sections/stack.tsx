@@ -67,7 +67,7 @@ function MarqueeRow({
 
 export function Stack() {
   return (
-    <section id="stack" className="scroll-mt-24 py-20 md:py-28">
+    <section id="stack" className="scroll-mt-24 py-16 md:py-20">
       <div className="mx-auto w-full max-w-6xl px-6 md:px-12 lg:px-18">
         <Reveal className="mb-12 md:mb-14">
           <SectionTag>Stack</SectionTag>
@@ -77,14 +77,16 @@ export function Stack() {
         </Reveal>
       </div>
 
-      {/* Full-bleed marquees, scrolling in opposite directions */}
-      <div className="marquee marquee-fade flex flex-col gap-3 overflow-hidden">
-        <MarqueeRow items={rowA} direction="left" />
-        <MarqueeRow items={rowB} direction="right" />
+      {/* Marquees scroll in opposite directions, clipped within the page margin */}
+      <div className="mx-auto w-full max-w-6xl px-6 md:px-12 lg:px-18">
+        <div className="marquee marquee-fade flex flex-col gap-3 overflow-hidden">
+          <MarqueeRow items={rowA} direction="left" />
+          <MarqueeRow items={rowB} direction="right" />
+        </div>
       </div>
 
       {/* Contribution heatmap, directly below the tools */}
-      <div className="mx-auto mt-12 w-full max-w-6xl px-6 md:px-12 lg:px-18 md:mt-14">
+      <div className="mx-auto mt-8 w-full max-w-6xl px-6 md:px-12 lg:px-18 md:mt-10">
         <Reveal>
           <ContributionGraph />
         </Reveal>

@@ -10,7 +10,7 @@ export function Experience() {
       tag="Experience"
       heading="Where I've shipped"
     >
-      <ol className="relative">
+      <ol className="relative space-y-5">
         {experience.map((job, i) => (
           <Reveal as="li" key={job.company} delay={i * 0.05}>
             <div className="relative pl-8 sm:pl-10">

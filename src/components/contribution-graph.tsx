@@ -1,21 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { cloneElement, useEffect, useState } from "react";
 import { GitHubCalendar } from "react-github-calendar";
 import { links } from "@/lib/site";
 
-// Monochrome contribution ramp (levels 0–4): dark surface → white.
+// Monochrome ramp (levels 0–4). Level 0 sits clearly above the ~#0d0d0d card
+// so the empty grid reads as a panel; steps rise evenly to a soft white.
 const calendarTheme = {
-  dark: ["#161616", "#2c2c2c", "#555555", "#999999", "#ededed"],
+  dark: ["#202020", "#3a3a3a", "#5a5a5a", "#8c8c8c", "#dcdcdc"],
 };
 
 /** GitHub contribution heatmap, mounted client-only to avoid hydration drift. */
 export function ContributionGraph() {
   const [mounted, setMounted] = useState(false);
+  // Deliberate mount gate: render the skeleton on the server/first paint, then
+  // swap in the calendar after hydration to avoid a hydration mismatch.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => setMounted(true), []);
 
   return (
-    <div className="rounded-2xl border border-border bg-surface/40 p-5 md:p-8">
+    <div className="contrib-card rounded-2xl border border-border bg-surface/40 p-6">
       <div className="overflow-x-auto">
         {mounted ? (
           <GitHubCalendar
@@ -26,6 +30,17 @@ export function ContributionGraph() {
             blockMargin={4}
             fontSize={13}
             style={{ color: "#8a8a8a" }}
+            renderBlock={(block, activity) =>
+              // SVG shows a native tooltip via a <title> child element,
+              // not a title attribute.
+              cloneElement(
+                block,
+                undefined,
+                <title>{`${activity.count} contribution${
+                  activity.count === 1 ? "" : "s"
+                } on ${activity.date}`}</title>
+              )
+            }
           />
         ) : (
           <div

@@ -37,11 +37,8 @@ export function Hero() {
   };
 
   return (
-    <section
-      id="top"
-      className="relative px-6 pb-12 pt-20 md:px-12 md:pb-16 md:pt-24 lg:px-18"
-    >
-      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.4fr_0.6fr] md:gap-14">
+    <section id="top" className="relative pb-12 pt-20 md:pb-16 md:pt-24">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[1.4fr_0.6fr] md:gap-14 md:px-12 lg:px-18">
         {/* Text — second on mobile so the photo sits above it */}
         <motion.div
           className="order-2 md:order-1"
@@ -68,26 +65,22 @@ export function Hero() {
             className="mt-7 max-w-xl space-y-5 text-[15px] leading-relaxed text-muted-foreground md:text-base"
           >
             <p>
-              I build <Em>AI agents</Em> and the backend that keeps them
-              running — RAG pipelines, multi-agent workflows, and the
-              unglamorous infrastructure that makes them fast and reliable in
-              production.
+              I specialise in <Em>agentic systems</Em>,{" "}
+              <Em>computer vision</Em>, and <Em>ML</Em> — from training and
+              fine-tuning to deploying models that hold up in production.
             </p>
             <p>
-              Lately I&apos;ve been deep in agentic systems and ML system
-              design. I shipped an AI Agent-as-a-Service platform that handled{" "}
-              <Em>1,000+ concurrent requests</Em> at <Em>99.9% uptime</Em> — and
-              I keep going deeper on the parts most people skip.
+              I&apos;ve shipped <Em>RAG pipelines</Em>, fine-tuned{" "}
+              <Em>YOLO models</Em> for real-time inference, and built{" "}
+              <Em>agentic platforms</Em> from scratch across my internships.
             </p>
             <p>
-              Final-year B.Tech student in Mumbai,{" "}
-              <Em>graduating May 2026</Em>. When I&apos;m not shipping, I&apos;m
-              usually breaking my own systems just to learn how they fail.
+              I build things that <Em>actually run in production</Em>.
             </p>
             <p>
-              <Em>Open to work</Em>: Full-time &amp; Internships from May 2026.{" "}
+              <Em>Open to work</Em>: Full-time, Freelance, or Collabs.{" "}
               <a
-                href="#contact"
+                href={`mailto:${links.email}`}
                 className="text-foreground underline decoration-foreground/40 underline-offset-4 transition-colors hover:decoration-foreground"
               >
                 Let&apos;s talk.
@@ -95,18 +88,11 @@ export function Hero() {
             </p>
           </motion.div>
 
-          {/* Resume button + social icons */}
+          {/* Social icons, then resume button */}
           <motion.div
             variants={item}
             className="mt-8 flex flex-wrap items-center gap-3"
           >
-            <a
-              href={profile.resume}
-              download
-              className="inline-flex h-10 items-center gap-2 rounded-lg border border-border px-4 text-sm text-foreground transition-colors hover:border-foreground/30 hover:bg-surface"
-            >
-              <FileText className="size-4" /> My resume
-            </a>
             <div className="flex items-center gap-1.5">
               {socialLinks.map(({ href, label, Icon }) => (
                 <a
@@ -123,6 +109,13 @@ export function Hero() {
                 </a>
               ))}
             </div>
+            <a
+              href={profile.resume}
+              download
+              className="inline-flex h-10 items-center gap-2 rounded-lg bg-foreground px-4 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
+            >
+              <FileText className="size-4" /> My resume
+            </a>
           </motion.div>
         </motion.div>
 

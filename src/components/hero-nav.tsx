@@ -2,17 +2,19 @@
 
 import { useEffect, useState } from "react";
 import { profile } from "@/lib/site";
+import { useScrollTo } from "@/lib/use-scroll-to";
 import { cn } from "@/lib/utils";
 
-/** Section links shown above the hero photo (reference: $whoami · Projects · …). */
+/** Section links shown above the hero photo (reference: About Me · Projects · …). */
 const items = [
-  { id: "top", label: "$whoami" },
+  { id: "top", label: "About Me" },
   { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
 ];
 
 export function HeroNav() {
   const [active, setActive] = useState("top");
+  const scrollTo = useScrollTo();
 
   // Scroll-spy: underline the link for the section currently in view.
   useEffect(() => {
@@ -43,6 +45,7 @@ export function HeroNav() {
         <a
           key={item.id}
           href={`#${item.id}`}
+          onClick={(e) => scrollTo(e, item.id)}
           className={cn(
             "underline-offset-[6px] transition-colors hover:text-foreground",
             active === item.id
