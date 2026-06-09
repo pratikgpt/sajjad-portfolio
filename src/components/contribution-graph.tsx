@@ -49,17 +49,6 @@ export function ContributionGraph() {
           />
         )}
       </div>
-      <p className="mt-5 font-mono text-xs text-muted-foreground">
-        <a
-          href={links.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="transition-colors hover:text-foreground"
-        >
-          @{links.githubUser}
-        </a>{" "}
-        · 41 public repositories
-      </p>
     </div>
   );
 }
