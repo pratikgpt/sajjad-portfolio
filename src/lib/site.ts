@@ -6,7 +6,6 @@
 export const profile = {
   name: "Sajjad Chaus",
   tagline: "AI/ML Engineer, 22",
-  meta: "22 · Mumbai, India · Open to full-time & internships",
   photo: "/sajjad.jpg",
   resume: "/Sajjad_resume.pdf",
 };
@@ -67,6 +66,7 @@ export const projects: Project[] = [
     description:
       "Real-time doctor–patient translation with a full voice pipeline — speak in one language, the other side hears it — plus AI medical summarization across 20 languages.",
     image: "/projects/meditranslate.png",
+    live: "https://health-care-assistant-system.vercel.app/",
     repo: "https://github.com/Sajjad01-chaus/HealthCare_Assistant_System",
   },
   {
@@ -83,6 +83,7 @@ export const projects: Project[] = [
     description:
       "Turns an ad creative into a personalized landing page — vision analysis maps the ad, then an LLM rewrites the page copy for conversion, streamed live.",
     image: "/projects/troopod.png",
+    live: "https://magic-page-ub7i.onrender.com/",
     repo: "https://github.com/Sajjad01-chaus/Magic_Page",
   },
   {

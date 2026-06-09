@@ -138,9 +138,6 @@ export function Hero() {
             />
             {/* gentle bottom fade so the photo settles into the page */}
             <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
-            <div className="absolute bottom-3 left-3 rounded-md border border-border bg-background/70 px-2.5 py-1 font-mono text-[11px] text-muted-foreground backdrop-blur">
-              Mumbai, India
-            </div>
           </div>
         </motion.div>
       </div>
