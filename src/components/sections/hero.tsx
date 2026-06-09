@@ -37,7 +37,7 @@ export function Hero() {
   };
 
   return (
-    <section id="top" className="relative pb-12 pt-20 md:pb-16 md:pt-24">
+    <section id="top" className="relative pb-12 pt-10 md:pb-16 md:pt-12">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[1.4fr_0.6fr] md:gap-14 md:px-12 lg:px-18">
         {/* Text — second on mobile so the photo sits above it */}
         <motion.div

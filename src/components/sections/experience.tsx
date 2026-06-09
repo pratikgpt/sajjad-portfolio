@@ -10,15 +10,11 @@ export function Experience() {
       tag="Experience"
       heading="Where I've shipped"
     >
-      <ol className="relative space-y-5">
+      <ol className="relative space-y-5 before:absolute before:left-[5px] before:top-2 before:bottom-2 before:w-px before:bg-border before:content-['']">
         {experience.map((job, i) => (
           <Reveal as="li" key={job.company} delay={i * 0.05}>
             <div className="relative pl-8 sm:pl-10">
-              {/* timeline rail + node */}
-              <span
-                className="absolute left-[5px] top-2 bottom-0 w-px bg-border"
-                aria-hidden
-              />
+              {/* timeline node (sits on the continuous rail behind it) */}
               <span
                 className="absolute left-0 top-1.5 size-[11px] rounded-full border-2 border-foreground/70 bg-background"
                 aria-hidden
